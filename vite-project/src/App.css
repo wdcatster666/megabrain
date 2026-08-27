@@ -498,6 +498,61 @@ button:focus-visible {
   }
 }
 
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .top-menu {
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .home-button {
+    width: 125px;
+    height: 58px;
+    font-size: 21px;
+  }
+
+  .about-button {
+    width: 100px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .play-button {
+    top: 80px;
+    left: 50%;
+
+    width: 270px;
+    height: 140px;
+
+    font-size: 58px;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+      10px 20px 0 #970000,
+      0 10px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .play-button:hover {
+    transform: translateX(-50%) translateY(-3px);
+  }
+
+  .brain-container {
+    top: 260px;
+    right: 50%;
+
+    transform: translateX(50%) scale(0.85);
+  }
+
+  .create-button {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
 
 @media (max-width: 400px) {
   .top-menu {
@@ -507,39 +562,34 @@ button:focus-visible {
   .home-button {
     width: 110px;
     height: 52px;
-
     font-size: 19px;
   }
 
   .about-button {
     width: 90px;
     height: 35px;
-
     font-size: 14px;
   }
 
   .play-button {
     width: 240px;
     height: 125px;
-
     font-size: 50px;
   }
 
   .brain-container {
-  position: absolute;
+    top: 250px;
+    right: 50%;
 
-  top: 25px;
-  right: 8%;
+    transform: translateX(50%) scale(0.7);
+  }
 
-  width: 240px;
-  height: 190px;
+  .brain-image {
+  position: relative;
+  z-index: 2;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  display: block;
 
-.brain-image {
   width: 220px;
   height: auto;
 
@@ -550,4 +600,7 @@ button:focus-visible {
     drop-shadow(0 0 15px #008cff)
     drop-shadow(0 0 25px #00bfff);
 }
+
 }
+
+
