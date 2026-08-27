@@ -3,14 +3,6 @@ import './App.css';
 function App() {
   return (
     <main className="game-page">
-      {/* Fundo decorativo */}
-      <div className="network-bg" aria-hidden="true">
-        <span className="light light-1" />
-        <span className="light light-2" />
-        <span className="light light-3" />
-        <span className="light light-4" />
-        <span className="light light-5" />
-      </div>
 
       {/* Menu superior */}
       <header className="top-menu">
@@ -25,24 +17,30 @@ function App() {
 
       {/* Conteúdo principal */}
       <section className="game-content">
+
+        {/* Botão JOGAR */}
         <button className="play-button" type="button">
           JOGAR
         </button>
 
+        {/* Cérebro */}
         <div className="brain-container" aria-label="Cérebro">
           <div className="brain-glow" />
-          <div className="brain">
+
+          <img
             className="brain-image"
             src="/megabrain.png"
             alt="Mega Brain"
-          </div>
+          />
         </div>
+
       </section>
 
-      {/* Botão inferior */}
+      {/* Botão CRIAR */}
       <button className="create-button" type="button">
         CRIAR
       </button>
+
     </main>
   );
 }

@@ -33,146 +33,16 @@ body {
 
   overflow: hidden;
 
-  background:
-    radial-gradient(
-      circle at 72% 45%,
-      rgba(0, 127, 180, 0.25),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(0, 154, 180, 0.18),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #002538 0%,
-      #003b50 45%,
-      #001522 100%
-    );
-}
-
-
-/* =========================================================
-   FUNDO COM EFEITO DE REDE
-   ========================================================= */
-
-.network-bg {
-  position: absolute;
-  inset: 0;
-
-  pointer-events: none;
-
-  opacity: 0.85;
-
-  background-image:
-    linear-gradient(
-      35deg,
-      transparent 48%,
-      rgba(0, 183, 255, 0.18) 49%,
-      transparent 50%
-    ),
-    linear-gradient(
-      145deg,
-      transparent 48%,
-      rgba(0, 183, 255, 0.15) 49%,
-      transparent 50%
-    );
-
-  background-size:
-    320px 230px,
-    280px 260px;
-}
-
-
-/* Pequenas partículas luminosas */
-
-.network-bg::before,
-.network-bg::after {
-  content: '';
-
-  position: absolute;
-
-  width: 4px;
-  height: 4px;
-
-  border-radius: 50%;
-
-  background: #8ffaff;
-
-  box-shadow:
-    30px 70px 8px #00bfff,
-    120px 160px 10px #00eaff,
-    190px 70px 7px #00a9df,
-    300px 210px 9px #00eaff,
-    420px 100px 7px #72ffff,
-    500px 280px 10px #00bfff,
-    600px 150px 8px #00eaff,
-    730px 90px 7px #00bfff,
-    850px 260px 9px #00eaff,
-    950px 120px 7px #72ffff,
-    1050px 340px 9px #00bfff,
-    1100px 180px 7px #00eaff;
-
-  filter: blur(0.3px);
-}
-
-.network-bg::before {
-  top: 40px;
-  left: 20px;
-}
-
-.network-bg::after {
-  right: 20px;
-  bottom: 30px;
-
-  transform: scale(0.7);
-}
-
-
-/* =========================================================
-   PONTOS DE LUZ
-   ========================================================= */
-
-.light {
-  position: absolute;
-
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: #b7ffff;
-
-  box-shadow:
-    0 0 7px #00d9ff,
-    0 0 18px #00cfff,
-    0 0 35px rgba(0, 213, 255, 0.7);
-}
-
-.light-1 {
-  top: 42%;
-  left: 7%;
-}
-
-.light-2 {
-  top: 18%;
-  left: 46%;
-}
-
-.light-3 {
-  top: 27%;
-  right: 8%;
-}
-
-.light-4 {
-  bottom: 12%;
-  left: 40%;
-}
-
-.light-5 {
-  bottom: 30%;
-  right: 29%;
+  /*
+   * NOVO FUNDO
+   * A imagem deve estar em:
+   *
+   * public/fundo.png
+   */
+  background-image: url('/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -193,7 +63,9 @@ body {
 }
 
 
-/* Botões pequenos */
+/* =========================================================
+   BOTÕES DO MENU
+   ========================================================= */
 
 .menu-button {
   border: none;
@@ -216,6 +88,9 @@ body {
     box-shadow 0.15s ease;
 }
 
+
+/* Efeito ao passar o mouse */
+
 .menu-button:hover {
   transform: translateY(-2px);
 
@@ -223,6 +98,9 @@ body {
     7px 11px 0 rgba(0, 42, 89, 0.65),
     0 7px 20px rgba(0, 157, 255, 0.3);
 }
+
+
+/* Efeito ao clicar */
 
 .menu-button:active {
   transform: translate(4px, 5px);
@@ -232,7 +110,9 @@ body {
 }
 
 
-/* HOME */
+/* =========================================================
+   BOTÃO HOME
+   ========================================================= */
 
 .home-button {
   width: 155px;
@@ -244,7 +124,9 @@ body {
 }
 
 
-/* SOBRE */
+/* =========================================================
+   BOTÃO SOBRE
+   ========================================================= */
 
 .about-button {
   width: 123px;
@@ -294,7 +176,6 @@ body {
 
   cursor: pointer;
 
-  /* sombra inferior semelhante à imagem */
   box-shadow:
     12px 24px 0 #970000,
     0 12px 25px rgba(0, 0, 0, 0.18);
@@ -304,6 +185,9 @@ body {
     box-shadow 0.15s ease;
 }
 
+
+/* Hover */
+
 .play-button:hover {
   transform: translateY(-3px);
 
@@ -311,6 +195,9 @@ body {
     12px 28px 0 #970000,
     0 15px 30px rgba(0, 0, 0, 0.25);
 }
+
+
+/* Clique */
 
 .play-button:active {
   transform: translate(6px, 12px);
@@ -327,56 +214,57 @@ body {
 .brain-container {
   position: absolute;
 
-  top: 25px;
-  right: 8%;
+  top: 5px;
+  right: 3%;
 
-  width: 240px;
-  height: 190px;
+  width: 650px;
+  height: 500px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  pointer-events: none;
 }
 
 
-/* Brilho azul atrás do cérebro */
+/* =========================================================
+   BRILHO ATRÁS DO CÉREBRO
+   ========================================================= */
 
 .brain-glow {
   position: absolute;
 
-  width: 170px;
-  height: 120px;
+  width: 420px;
+  height: 280px;
 
   border-radius: 50%;
 
-  background: rgba(0, 205, 255, 0.35);
+  background: rgba(0, 205, 255, 0.45);
 
-  filter: blur(30px);
+  filter: blur(45px);
 }
 
 
-/* Cérebro substituto */
+/* =========================================================
+   IMAGEM DO CÉREBRO
+   ========================================================= */
 
-.brain {
+.brain-image {
   position: relative;
   z-index: 2;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 
-  width: 190px;
-  height: 150px;
+  width: 500px;
+  height: auto;
 
-  font-family: Arial, sans-serif;
-  font-size: 125px;
+  object-fit: contain;
 
   filter:
-    drop-shadow(0 0 5px #00eaff)
-    drop-shadow(0 0 15px #008cff)
-    drop-shadow(0 0 25px #00bfff);
-
-  transform: rotate(-5deg);
+    drop-shadow(0 0 8px #00eaff)
+    drop-shadow(0 0 25px #008cff)
+    drop-shadow(0 0 40px #00bfff);
 }
 
 
@@ -397,7 +285,7 @@ body {
   border: none;
   border-radius: 50%;
 
-  color: white;
+  color: #fff;
 
   background: #078bf1;
 
@@ -415,6 +303,9 @@ body {
     box-shadow 0.15s ease;
 }
 
+
+/* Hover */
+
 .create-button:hover {
   transform: translateY(-2px);
 
@@ -422,6 +313,9 @@ body {
     6px 10px 0 rgba(0, 43, 91, 0.7),
     0 7px 20px rgba(0, 119, 255, 0.3);
 }
+
+
+/* Clique */
 
 .create-button:active {
   transform: translate(4px, 5px);
@@ -442,83 +336,54 @@ button:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVIDADE
+   TELAS MÉDIAS
    ========================================================= */
 
-@media (max-width: 700px) {
-  .top-menu {
-    gap: 15px;
-    padding: 20px 15px;
-  }
-
-  .home-button {
-    width: 125px;
-    height: 58px;
-
-    font-size: 21px;
-  }
-
-  .about-button {
-    width: 100px;
-    height: 38px;
-
-    font-size: 16px;
-  }
-
-  .play-button {
-    top: 80px;
-    left: 50%;
-
-    width: 270px;
-    height: 140px;
-
-    font-size: 58px;
-
-    transform: translateX(-50%);
-
-    box-shadow:
-      10px 20px 0 #970000,
-      0 10px 20px rgba(0, 0, 0, 0.18);
-  }
-
-  .play-button:hover {
-    transform: translateX(-50%) translateY(-3px);
-  }
-
+@media (max-width: 1100px) {
   .brain-container {
-    top: 260px;
-    right: 50%;
+    right: -5%;
 
-    transform: translateX(50%) scale(0.85);
-  }
-
-  .create-button {
-    right: 15px;
-    bottom: 15px;
+    transform: scale(0.85);
+    transform-origin: top right;
   }
 }
+
 
 /* =========================================================
-   RESPONSIVIDADE
+   TABLET / CELULAR
    ========================================================= */
 
 @media (max-width: 700px) {
+
+  /* Menu */
+
   .top-menu {
     gap: 15px;
     padding: 20px 15px;
   }
 
+
+  /* Home */
+
   .home-button {
     width: 125px;
     height: 58px;
+
     font-size: 21px;
   }
+
+
+  /* Sobre */
 
   .about-button {
     width: 100px;
     height: 38px;
+
     font-size: 16px;
   }
+
+
+  /* Jogar */
 
   .play-button {
     top: 80px;
@@ -536,16 +401,37 @@ button:focus-visible {
       0 10px 20px rgba(0, 0, 0, 0.18);
   }
 
+
   .play-button:hover {
     transform: translateX(-50%) translateY(-3px);
   }
+
+
+  /* Cérebro */
 
   .brain-container {
     top: 260px;
     right: 50%;
 
-    transform: translateX(50%) scale(0.85);
+    width: 400px;
+    height: 330px;
+
+    transform: translateX(50%);
   }
+
+
+  .brain-image {
+    width: 350px;
+  }
+
+
+  .brain-glow {
+    width: 300px;
+    height: 220px;
+  }
+
+
+  /* Criar */
 
   .create-button {
     right: 15px;
@@ -554,53 +440,59 @@ button:focus-visible {
 }
 
 
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
 @media (max-width: 400px) {
+
   .top-menu {
     gap: 10px;
   }
 
+
   .home-button {
     width: 110px;
     height: 52px;
+
     font-size: 19px;
   }
+
 
   .about-button {
     width: 90px;
     height: 35px;
+
     font-size: 14px;
   }
+
 
   .play-button {
     width: 240px;
     height: 125px;
+
     font-size: 50px;
   }
+
 
   .brain-container {
     top: 250px;
     right: 50%;
 
-    transform: translateX(50%) scale(0.7);
+    width: 330px;
+    height: 280px;
+
+    transform: translateX(50%);
   }
 
+
   .brain-image {
-  position: relative;
-  z-index: 2;
+    width: 290px;
+  }
 
-  display: block;
 
-  width: 220px;
-  height: auto;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 0 5px #00eaff)
-    drop-shadow(0 0 15px #008cff)
-    drop-shadow(0 0 25px #00bfff);
+  .brain-glow {
+    width: 250px;
+    height: 180px;
+  }
 }
-
-}
-
-
