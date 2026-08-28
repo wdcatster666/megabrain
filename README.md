@@ -1,4 +1,4 @@
-# MeTube
+# MegaBrain
 Primeiro projeto de Engenharia de Software II
 
 ## Comando para iniciar o react
