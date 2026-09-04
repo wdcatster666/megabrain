@@ -33,12 +33,6 @@ body {
 
   overflow: hidden;
 
-  /*
-   * NOVO FUNDO
-   * A imagem deve estar em:
-   *
-   * public/fundo.png
-   */
   background-image: url('/fundo.png');
   background-size: cover;
   background-position: center;
@@ -86,6 +80,12 @@ body {
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -208,7 +208,7 @@ body {
 
 
 /* =========================================================
-   CÉREBRO
+   CÉREBRO - HOME
    ========================================================= */
 
 .brain-container {
@@ -229,7 +229,7 @@ body {
 
 
 /* =========================================================
-   BRILHO ATRÁS DO CÉREBRO
+   BRILHO - HOME
    ========================================================= */
 
 .brain-glow {
@@ -247,7 +247,7 @@ body {
 
 
 /* =========================================================
-   IMAGEM DO CÉREBRO
+   IMAGEM DO CÉREBRO - HOME
    ========================================================= */
 
 .brain-image {
@@ -326,11 +326,290 @@ body {
 
 
 /* =========================================================
+   =========================================================
+   PÁGINA SOBRE
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.sobre-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background-image: url('/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   CAMADA ESCURA
+   ========================================================= */
+
+.sobre-page::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 12, 25, 0.40),
+      rgba(0, 15, 30, 0.18),
+      rgba(0, 5, 20, 0.25)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTEÚDO SOBRE
+   ========================================================= */
+
+.sobre-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 30px 50px;
+}
+
+
+/* =========================================================
+   TEXTO SOBRE
+   ========================================================= */
+
+.sobre-text {
+  position: relative;
+
+  z-index: 10;
+
+  width: 57%;
+
+  max-width: 780px;
+
+  padding-left: 5px;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.sobre-title {
+  margin-bottom: 8px;
+
+  color: #078bf1;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 65px;
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  text-shadow:
+    3px 4px 0 rgba(0, 42, 89, 0.8),
+    0 0 18px rgba(0, 160, 255, 0.35);
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.sobre-subtitle {
+  margin-bottom: 20px;
+
+  color: #fff;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 25px;
+
+  font-weight: bold;
+
+  line-height: 1.25;
+
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   PARÁGRAFOS
+   ========================================================= */
+
+.sobre-text p {
+  margin-bottom: 11px;
+
+  color: #fff;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  line-height: 1.35;
+
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   MEGABRAIN
+   ========================================================= */
+
+.sobre-text strong {
+  color: #078bf1;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   FRASE FINAL
+   ========================================================= */
+
+.sobre-final {
+  margin-top: 8px;
+
+  color: #ff1744 !important;
+
+  font-size: 21px !important;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   CÉREBRO - SOBRE
+   ========================================================= */
+
+.sobre-brain-container {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 0;
+
+  right: 2%;
+
+  width: 600px;
+
+  height: 500px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BRILHO - SOBRE
+   ========================================================= */
+
+.sobre-brain-glow {
+  position: absolute;
+
+  width: 430px;
+
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 205, 255, 0.45);
+
+  filter: blur(45px);
+}
+
+
+/* =========================================================
+   IMAGEM DO CÉREBRO - SOBRE
+   ========================================================= */
+
+.sobre-brain-image {
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  width: 510px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 0 8px #00eaff)
+    drop-shadow(0 0 25px #008cff)
+    drop-shadow(0 0 40px #00bfff);
+
+  animation: sobreBrainFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+@keyframes sobreBrainFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
    ACESSIBILIDADE
    ========================================================= */
 
-button:focus-visible {
+button:focus-visible,
+a:focus-visible {
   outline: 3px solid #fff;
+
   outline-offset: 4px;
 }
 
@@ -340,11 +619,27 @@ button:focus-visible {
    ========================================================= */
 
 @media (max-width: 1100px) {
+
   .brain-container {
     right: -5%;
 
     transform: scale(0.85);
+
     transform-origin: top right;
+  }
+
+
+  .sobre-brain-container {
+    right: -5%;
+
+    transform: scale(0.85);
+
+    transform-origin: top right;
+  }
+
+
+  .sobre-text {
+    width: 62%;
   }
 }
 
@@ -355,41 +650,54 @@ button:focus-visible {
 
 @media (max-width: 700px) {
 
-  /* Menu */
+  /* =====================================================
+     MENU
+     ===================================================== */
 
   .top-menu {
     gap: 15px;
+
     padding: 20px 15px;
   }
 
 
-  /* Home */
+  /* =====================================================
+     HOME
+     ===================================================== */
 
   .home-button {
     width: 125px;
+
     height: 58px;
 
     font-size: 21px;
   }
 
 
-  /* Sobre */
+  /* =====================================================
+     SOBRE
+     ===================================================== */
 
   .about-button {
     width: 100px;
+
     height: 38px;
 
     font-size: 16px;
   }
 
 
-  /* Jogar */
+  /* =====================================================
+     JOGAR
+     ===================================================== */
 
   .play-button {
     top: 80px;
+
     left: 50%;
 
     width: 270px;
+
     height: 140px;
 
     font-size: 58px;
@@ -407,13 +715,17 @@ button:focus-visible {
   }
 
 
-  /* Cérebro */
+  /* =====================================================
+     CÉREBRO HOME
+     ===================================================== */
 
   .brain-container {
     top: 260px;
+
     right: 50%;
 
     width: 400px;
+
     height: 330px;
 
     transform: translateX(50%);
@@ -427,15 +739,88 @@ button:focus-visible {
 
   .brain-glow {
     width: 300px;
+
     height: 220px;
   }
 
 
-  /* Criar */
+  /* =====================================================
+     CRIAR
+     ===================================================== */
 
   .create-button {
     right: 15px;
+
     bottom: 15px;
+  }
+
+
+  /* =====================================================
+     SOBRE
+     ===================================================== */
+
+  .sobre-content {
+    min-height: calc(100vh - 90px);
+
+    display: block;
+
+    padding: 35px 20px 80px;
+  }
+
+
+  .sobre-text {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 0;
+  }
+
+
+  .sobre-title {
+    font-size: 48px;
+  }
+
+
+  .sobre-subtitle {
+    font-size: 20px;
+  }
+
+
+  .sobre-text p {
+    font-size: 17px;
+  }
+
+
+  /*
+   * O cérebro fica parcialmente atrás
+   * do conteúdo no celular.
+   */
+
+  .sobre-brain-container {
+    top: 250px;
+
+    right: 50%;
+
+    width: 400px;
+
+    height: 330px;
+
+    transform: translateX(50%);
+
+    opacity: 0.25;
+  }
+
+
+  .sobre-brain-image {
+    width: 350px;
+  }
+
+
+  .sobre-brain-glow {
+    width: 300px;
+
+    height: 220px;
   }
 }
 
@@ -453,6 +838,7 @@ button:focus-visible {
 
   .home-button {
     width: 110px;
+
     height: 52px;
 
     font-size: 19px;
@@ -461,6 +847,7 @@ button:focus-visible {
 
   .about-button {
     width: 90px;
+
     height: 35px;
 
     font-size: 14px;
@@ -469,6 +856,7 @@ button:focus-visible {
 
   .play-button {
     width: 240px;
+
     height: 125px;
 
     font-size: 50px;
@@ -477,9 +865,11 @@ button:focus-visible {
 
   .brain-container {
     top: 250px;
+
     right: 50%;
 
     width: 330px;
+
     height: 280px;
 
     transform: translateX(50%);
@@ -493,6 +883,54 @@ button:focus-visible {
 
   .brain-glow {
     width: 250px;
+
+    height: 180px;
+  }
+
+
+  /* =====================================================
+     SOBRE
+     ===================================================== */
+
+  .sobre-content {
+    padding-left: 15px;
+
+    padding-right: 15px;
+  }
+
+
+  .sobre-title {
+    font-size: 42px;
+  }
+
+
+  .sobre-subtitle {
+    font-size: 18px;
+  }
+
+
+  .sobre-text p {
+    font-size: 16px;
+  }
+
+
+  .sobre-brain-container {
+    top: 260px;
+
+    width: 330px;
+
+    height: 280px;
+  }
+
+
+  .sobre-brain-image {
+    width: 290px;
+  }
+
+
+  .sobre-brain-glow {
+    width: 250px;
+
     height: 180px;
   }
 }
