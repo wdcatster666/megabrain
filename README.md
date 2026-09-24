@@ -1,4 +1,7 @@
 # MegaBrain
+
+<img src="megabrain/public/megabrain.png" alt="MegaBrain" width="300">
+
 Primeiro projeto de Engenharia de Software II
 
 ## Integrantes:
