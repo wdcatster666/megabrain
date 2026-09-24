@@ -1,6 +1,12 @@
 # MegaBrain
 Primeiro projeto de Engenharia de Software II
 
-## Comando para iniciar o react
+## Integrantes:
 
-npm create vite@latest
+- Nicolas
+- Fellipe
+- Henrique
+
+## Descrição:
+
+O MegaBrain é um site focado na criação de quizzes e em jogar os mesmos. São várias opções de quizzes, com vários temas diferentes e outras opções de customização.
