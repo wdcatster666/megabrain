@@ -294,6 +294,12 @@ body {
 
   cursor: pointer;
 
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   box-shadow:
     6px 8px 0 rgba(0, 43, 91, 0.7),
     0 4px 15px rgba(0, 119, 255, 0.25);
@@ -932,5 +938,908 @@ a:focus-visible {
     width: 250px;
 
     height: 180px;
+  }
+}
+
+/* =========================================================
+   =========================================================
+   PÁGINA CRIAR QUIZ
+   =========================================================
+   ========================================================= */
+
+.criar-quiz-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background-image: url('/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   CAMADA ESCURA
+   ========================================================= */
+
+.criar-quiz-page::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 5, 20, 0.30),
+      rgba(0, 15, 35, 0.12),
+      rgba(0, 5, 20, 0.28)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.criar-quiz-menu {
+  position: relative;
+
+  z-index: 20;
+
+  padding: 25px 20px;
+}
+
+
+/* =========================================================
+   BOTÃO CRIAR DO MENU
+   ========================================================= */
+
+.criar-menu-button {
+  width: 210px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  font-size: 35px;
+}
+
+
+/* =========================================================
+   CÉREBRO
+   ========================================================= */
+
+.criar-quiz-brain-container {
+  position: absolute;
+
+  z-index: 5;
+
+  top: -15px;
+  right: 0;
+
+  width: 270px;
+  height: 190px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BRILHO DO CÉREBRO
+   ========================================================= */
+
+.criar-quiz-brain-glow {
+  position: absolute;
+
+  width: 190px;
+  height: 125px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 205, 255, 0.45);
+
+  filter: blur(35px);
+}
+
+
+/* =========================================================
+   IMAGEM DO CÉREBRO
+   ========================================================= */
+
+.criar-quiz-brain-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: 235px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 0 7px #00eaff)
+    drop-shadow(0 0 18px #008cff)
+    drop-shadow(0 0 28px #00bfff);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.criar-quiz-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  min-height: calc(100vh - 105px);
+
+  display: grid;
+
+  grid-template-columns: 43% 45%;
+
+  column-gap: 4%;
+
+  padding:
+    15px
+    34px
+    70px
+    42px;
+}
+
+
+/* =========================================================
+   COLUNA ESQUERDA
+   ========================================================= */
+
+.quiz-information {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 360px;
+
+  padding-top: 0;
+}
+
+
+/* =========================================================
+   TÍTULO CRIAR QUIZ
+   ========================================================= */
+
+.criar-quiz-title {
+  margin-bottom: 26px;
+
+  color: #fff;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 31px;
+
+  font-weight: normal;
+
+  line-height: 1;
+
+  text-shadow:
+    2px 3px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.quiz-information label,
+.pergunta-editor label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #fff;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 18px;
+
+  font-weight: normal;
+
+  text-shadow:
+    1px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.quiz-input {
+  width: 100%;
+
+  height: 36px;
+
+  margin-bottom: 15px;
+
+  padding: 5px 10px;
+
+  border: 2px solid #008cf5;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  color: #111;
+
+  background: #e7e7e7;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.quiz-textarea {
+  width: 100%;
+
+  height: 62px;
+
+  margin-bottom: 15px;
+
+  padding: 7px 10px;
+
+  resize: none;
+
+  border: 2px solid #008cf5;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  color: #111;
+
+  background: #e7e7e7;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.quiz-select {
+  width: 100%;
+
+  height: 28px;
+
+  margin-bottom: 12px;
+
+  padding: 1px 10px;
+
+  border: 1px solid #008cf5;
+
+  border-radius: 5px;
+
+  outline: none;
+
+  color: #fff;
+
+  background: rgba(0, 34, 62, 0.88);
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+.quiz-select:focus,
+.quiz-input:focus,
+.quiz-textarea:focus,
+.alternativa-input:focus {
+  box-shadow:
+    0 0 8px rgba(0, 166, 255, 0.75);
+}
+
+
+/* =========================================================
+   BOTÃO ADICIONAR PERGUNTA
+   ========================================================= */
+
+.adicionar-pergunta-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 10px;
+
+  padding: 4px 9px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  color: #fff;
+
+  background: #078bf1;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  box-shadow:
+    3px 4px 0 rgba(0, 42, 89, 0.7);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.adicionar-pergunta-button span {
+  font-size: 21px;
+
+  line-height: 15px;
+}
+
+
+.adicionar-pergunta-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    3px 6px 0 rgba(0, 42, 89, 0.7);
+}
+
+
+.adicionar-pergunta-button:active {
+  transform: translate(2px, 3px);
+
+  box-shadow:
+    1px 2px 0 rgba(0, 42, 89, 0.7);
+}
+
+
+/* =========================================================
+   EDITOR DA PERGUNTA
+   ========================================================= */
+
+.pergunta-editor {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 340px;
+
+  margin-top: 12px;
+
+  padding: 0 12px 18px;
+
+  border: 2px solid #008cf5;
+
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 45, 80, 0.55),
+      rgba(0, 20, 45, 0.28)
+    );
+
+  box-shadow:
+    0 0 8px rgba(0, 145, 255, 0.22);
+
+  backdrop-filter: blur(2px);
+}
+
+
+/* =========================================================
+   TÍTULO DA PERGUNTA
+   ========================================================= */
+
+.pergunta-editor h2 {
+  margin-top: -34px;
+
+  margin-bottom: 4px;
+
+  margin-left: -14px;
+
+  color: #fff;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 27px;
+
+  font-weight: normal;
+
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   LABELS DO EDITOR
+   ========================================================= */
+
+.pergunta-editor label {
+  color: #00aaff;
+
+  margin-bottom: 4px;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   INPUT DO EDITOR
+   ========================================================= */
+
+.pergunta-editor .quiz-input {
+  height: 36px;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SELECT DO EDITOR
+   ========================================================= */
+
+.pergunta-editor .quiz-select {
+  height: 25px;
+
+  margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   LABEL ALTERNATIVAS
+   ========================================================= */
+
+.alternativas-label {
+  margin-top: 0;
+
+  margin-bottom: 5px !important;
+
+  color: #00aaff !important;
+}
+
+
+/* =========================================================
+   LISTA DE ALTERNATIVAS
+   ========================================================= */
+
+.alternativas-lista {
+  width: 100%;
+}
+
+
+/* =========================================================
+   LINHA DA ALTERNATIVA
+   ========================================================= */
+
+.alternativa-row {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  height: 31px;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BOLINHA
+   ========================================================= */
+
+.alternativa-bullet {
+  width: 8px;
+
+  margin-right: 3px;
+
+  color: #fff;
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   INPUT DA ALTERNATIVA
+   ========================================================= */
+
+.alternativa-input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 25px;
+
+  padding: 3px 8px;
+
+  border: 1px solid #008cf5;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  color: #111;
+
+  background: #e7e7e7;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BOTÃO CORRETA
+   ========================================================= */
+
+.correta-button {
+  width: 58px;
+
+  height: 17px;
+
+  margin-left: -61px;
+
+  margin-right: 10px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 8px;
+
+  color: #fff;
+
+  background: #078bf1;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  opacity: 0.95;
+}
+
+
+.correta-button:hover {
+  background: #20a2ff;
+}
+
+
+.correta-button.correta-ativa {
+  background: #078bf1;
+
+  box-shadow:
+    0 0 5px rgba(0, 180, 255, 0.7);
+}
+
+
+/* =========================================================
+   REMOVER ALTERNATIVA
+   ========================================================= */
+
+.remover-alternativa-button {
+  width: 23px;
+
+  height: 25px;
+
+  margin-left: 3px;
+
+  padding: 0;
+
+  border: none;
+
+  color: #fff;
+
+  background: transparent;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+
+.remover-alternativa-button:hover {
+  color: #ff5252;
+
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   ADICIONAR ALTERNATIVA
+   ========================================================= */
+
+.adicionar-alternativa-button {
+  margin-top: 6px;
+
+  padding: 0;
+
+  border: none;
+
+  color: #00aaff;
+
+  background: transparent;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+.adicionar-alternativa-button:hover {
+  color: #40c2ff;
+
+  text-shadow:
+    0 0 7px rgba(0, 180, 255, 0.6);
+}
+
+
+/* =========================================================
+   SALVAR QUIZ
+   ========================================================= */
+
+.salvar-quiz-button {
+  position: absolute;
+
+  z-index: 30;
+
+  right: 25px;
+
+  bottom: 20px;
+
+  height: 37px;
+
+  padding: 0 13px 0 8px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  color: #fff;
+
+  background: #078bf1;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    4px 5px 0 rgba(0, 42, 89, 0.7);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.salvar-quiz-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    4px 7px 0 rgba(0, 42, 89, 0.7);
+}
+
+
+.salvar-quiz-button:active {
+  transform: translate(2px, 3px);
+
+  box-shadow:
+    2px 2px 0 rgba(0, 42, 89, 0.7);
+}
+
+
+.salvar-icon {
+  margin-right: 7px;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .criar-quiz-brain-container {
+    right: -35px;
+
+    transform: scale(0.8);
+
+    transform-origin: top right;
+  }
+
+
+  .criar-quiz-content {
+    grid-template-columns: 42% 52%;
+
+    column-gap: 3%;
+
+    padding-left: 25px;
+    padding-right: 20px;
+  }
+
+
+  .criar-quiz-title {
+    font-size: 27px;
+  }
+
+
+  .criar-menu-button {
+    width: 180px;
+
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .criar-quiz-page {
+    min-height: 100vh;
+
+    overflow-y: auto;
+  }
+
+
+  .criar-quiz-menu {
+    padding: 20px 15px;
+  }
+
+
+  .criar-menu-button {
+    width: 150px;
+
+    height: 58px;
+
+    font-size: 25px;
+  }
+
+
+  .criar-quiz-brain-container {
+    top: 55px;
+
+    right: 5px;
+
+    width: 210px;
+
+    height: 150px;
+
+    transform: scale(0.7);
+  }
+
+
+  .criar-quiz-content {
+    display: block;
+
+    padding:
+      25px 20px 90px;
+  }
+
+
+  .quiz-information {
+    max-width: 100%;
+
+    margin-bottom: 40px;
+  }
+
+
+  .criar-quiz-title {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .pergunta-editor {
+    margin-top: 20px;
+
+    padding-bottom: 20px;
+  }
+
+
+  .salvar-quiz-button {
+    right: 15px;
+
+    bottom: 15px;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .criar-quiz-menu {
+    gap: 12px;
+  }
+
+
+  .criar-quiz-menu .home-button {
+    width: 110px;
+
+    height: 52px;
+
+    font-size: 19px;
+  }
+
+
+  .criar-menu-button {
+    width: 125px;
+
+    height: 48px;
+
+    font-size: 21px;
+  }
+
+
+  .criar-quiz-brain-container {
+    transform: scale(0.55);
+
+    transform-origin: top right;
+  }
+
+
+  .criar-quiz-content {
+    padding-left: 15px;
+
+    padding-right: 15px;
+  }
+
+
+  .pergunta-editor h2 {
+    font-size: 23px;
+  }
+
+
+  .correta-button {
+    width: 52px;
+
+    margin-left: -55px;
+
+    margin-right: 7px;
   }
 }

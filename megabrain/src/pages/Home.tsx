@@ -29,9 +29,9 @@ export function Home() {
         </div>
       </section>
 
-      <button className="create-button" type="button">
+      <Link to="/criar" className="create-button">
         CRIAR
-      </button>
+      </Link>
     </main>
   );
 }
