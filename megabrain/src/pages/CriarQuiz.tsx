@@ -273,7 +273,7 @@ export function CriarQuiz() {
 
       <header className="top-menu criar-quiz-menu">
 
-        <Link to="/" className="menu-button home-button">
+        <Link to="/home" className="menu-button home-button">
           HOME
         </Link>
 

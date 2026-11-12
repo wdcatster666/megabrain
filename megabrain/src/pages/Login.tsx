@@ -50,7 +50,7 @@ export function Login() {
         nome: usuario.nome,
         autenticadoEm: new Date().toISOString(),
       }));
-      navigate('/', { replace: true });
+      navigate('/home', { replace: true });
     } catch {
       setErro('Não foi possível realizar o login. Tente novamente.');
     } finally {
@@ -62,7 +62,7 @@ export function Login() {
     <main className="auth-page login-page">
       <div className="auth-overlay" />
       <header className="auth-header">
-        <Link to="/" className="menu-button auth-home-button">HOME</Link>
+        <Link to="/home" className="menu-button auth-home-button">HOME</Link>
       </header>
 
       <section className="login-layout">

@@ -83,7 +83,7 @@ export function Cadastro() {
     <main className="auth-page cadastro-page">
       <div className="auth-overlay" />
       <header className="auth-header">
-        <Link to="/" className="menu-button auth-home-button">HOME</Link>
+        <Link to="/home" className="menu-button auth-home-button">HOME</Link>
         <Link to="/login" className="menu-button auth-small-button">LOGIN</Link>
       </header>
 
