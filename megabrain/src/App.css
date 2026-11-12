@@ -1843,3 +1843,321 @@ a:focus-visible {
     margin-right: 7px;
   }
 }
+
+/* =========================================================
+   LOGIN E CADASTRO - MEGABRAIN
+   ========================================================= */
+
+.auth-page {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  background-image: url('/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.auth-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 5, 20, .36), rgba(0, 15, 35, .12), rgba(0, 5, 20, .32));
+}
+
+.auth-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 25px 20px;
+}
+
+.auth-home-button {
+  width: 145px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.auth-small-button {
+  width: 115px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  border: 1px solid #008cf5;
+  border-radius: 7px;
+  background: rgba(0, 19, 43, .52);
+  box-shadow: 0 0 15px rgba(0, 132, 255, .12);
+  backdrop-filter: blur(2px);
+  color: #fff;
+}
+
+.auth-card h1 {
+  margin: 0 0 14px;
+  color: #fff;
+  font: normal 29px Georgia, 'Times New Roman', serif;
+  letter-spacing: 0;
+}
+
+.auth-intro {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.86);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.auth-card label {
+  margin: 11px 0 5px;
+  color: #fff;
+  font-size: 15px;
+  text-shadow: 1px 2px 4px rgba(0,0,0,.8);
+}
+
+.auth-card input {
+  width: 100%;
+  height: 36px;
+  padding: 7px 10px;
+  border: 1px solid #008cf5;
+  border-radius: 5px;
+  outline: none;
+  color: #111;
+  background: #e7e7e7;
+  font: 15px Georgia, 'Times New Roman', serif;
+}
+
+.auth-card input:focus {
+  box-shadow: 0 0 9px rgba(0, 166, 255, .8);
+}
+
+.auth-submit {
+  min-height: 42px;
+  margin-top: 22px;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: #078bf1;
+  box-shadow: 4px 5px 0 rgba(0, 42, 89, .7);
+  font: bold 16px Georgia, 'Times New Roman', serif;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.auth-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #159cff;
+  box-shadow: 4px 7px 0 rgba(0, 42, 89, .7);
+}
+
+.auth-submit:active:not(:disabled) {
+  transform: translate(2px, 3px);
+  box-shadow: 2px 2px 0 rgba(0, 42, 89, .7);
+}
+
+.auth-submit:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  color: rgba(255,255,255,.9);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.auth-switch a {
+  color: #28baff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.auth-message {
+  margin-top: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.auth-error {
+  border: 1px solid rgba(255, 75, 90, .65);
+  color: #ffd5d9;
+  background: rgba(120, 0, 20, .45);
+}
+
+.auth-success {
+  border: 1px solid rgba(45, 220, 145, .65);
+  color: #c9ffe4;
+  background: rgba(0, 100, 55, .4);
+}
+
+/* Cadastro: painel central, como na referência enviada. */
+.cadastro-card {
+  width: min(520px, calc(100% - 40px));
+  min-height: 510px;
+  margin: 35px auto 55px;
+  padding: 22px 25px 25px;
+}
+
+.cadastro-card h1 {
+  margin-bottom: 8px;
+}
+
+/* Login: formulário à esquerda e identidade visual à direita. */
+.login-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(280px, 390px) minmax(280px, 1fr);
+  align-items: center;
+  gap: clamp(25px, 7vw, 100px);
+  width: min(1000px, calc(100% - 60px));
+  min-height: calc(100vh - 110px);
+  margin: 0 auto;
+  padding: 10px 0 45px;
+}
+
+.login-card {
+  width: 100%;
+  padding: 22px 20px 20px;
+}
+
+.login-card h1 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.login-card .auth-intro {
+  margin-bottom: 12px;
+}
+
+.login-card .auth-switch {
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.login-brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  text-align: center;
+}
+
+.login-brand img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(360px, 100%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px #00eaff) drop-shadow(0 0 25px #008cff) drop-shadow(0 0 40px #00bfff);
+  animation: loginBrainFloat 5s ease-in-out infinite;
+}
+
+.login-brand strong {
+  z-index: 1;
+  margin-top: 8px;
+  color: #fff;
+  font: bold 36px Arial, sans-serif;
+  text-shadow: 0 2px 8px rgba(0,0,0,.65);
+}
+
+.login-brain-glow {
+  position: absolute;
+  width: 280px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(0, 205, 255, .35);
+  filter: blur(48px);
+}
+
+@keyframes loginBrainFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 700px) {
+  .auth-header {
+    padding: 20px 15px;
+    gap: 14px;
+  }
+
+  .auth-home-button {
+    width: 125px;
+    height: 58px;
+    font-size: 21px;
+  }
+
+  .auth-small-button {
+    width: 100px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .cadastro-card {
+    margin: 20px auto 35px;
+    padding: 20px;
+  }
+
+  .login-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: min(460px, calc(100% - 30px));
+    min-height: auto;
+    padding: 15px 0 35px;
+  }
+
+  .login-card {
+    order: 1;
+  }
+
+  .login-brand {
+    order: 2;
+    min-height: 230px;
+  }
+
+  .login-brand img {
+    width: 230px;
+  }
+
+  .login-brand strong {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-card h1 { font-size: 25px; }
+  .auth-card { padding: 18px 15px; }
+  .auth-card input { height: 35px; }
+  .cadastro-card { width: calc(100% - 24px); }
+}
+
+@media (max-width: 700px) {
+  .home-login-link { width: 92px; height: 36px; font-size: 14px; }
+}
